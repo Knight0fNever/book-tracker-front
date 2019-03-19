@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     loadBooks: function() {
-      axios.get('http://localhost:8080/books').then((response) => {
+      axios.get(`http://${process.env.VUE_APP_DB_HOST}:8080/books`).then((response) => {
           this.books = response.data
           console.log(response.data);
         }, (error) => {
@@ -38,6 +38,7 @@ export default {
     }
   },
   mounted: function() {
+    console.log(process.env);
     this.loadBooks();
   }
 }

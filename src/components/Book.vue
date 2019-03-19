@@ -8,7 +8,7 @@
         <p>Author: {{author}}</p>
         <p>Date Published: {{datePublishedFormatted}}</p>
         <p>ISBN: {{isbn}}</p>
-        <p>MSRP: {{msrp}}</p>
+        <p>MSRP: {{msrpFormatted}}</p>
         <p>Edition: {{edition}}</p>
         <p>Pages: {{pages}}</p>
       </mdb-card-text>
@@ -32,7 +32,8 @@ export default {
   },
   data: function() {
     return {
-      datePublishedFormatted: moment(this.datePublished).format('MM-DD-YYYY')
+      datePublishedFormatted: moment(this.datePublished).format('MM-DD-YYYY'),
+      msrpFormatted: parseFloat(this.msrp).toLocaleString('en-US', { style: 'currency', currency: 'USD' })
     }
   },
   props: {

@@ -60,11 +60,13 @@
                 >Save</mdb-btn>
               </div>
               <div class="text-center mb-4">
-                <mdb-btn
-                  color="blue-grey"
-                  type="button"
-                  class="btn-block z-depth-2"
-                >Cancel</mdb-btn>
+                <router-link to="/books">
+                  <mdb-btn
+                    color="blue-grey"
+                    type="button"
+                    class="btn-block z-depth-2"
+                  >Cancel</mdb-btn>
+                </router-link>
               </div>
             </mdb-card-body>
           </mdb-card>
@@ -174,7 +176,7 @@ export default {
       // console.log(bookBody);
 
       axios
-        .post(`http://localhost:8080/book`, bookBody)
+        .post(`http://${process.env.VUE_APP_DB_HOST}:8080/book`, bookBody)
         .then(response => {
           console.log(response);
         })

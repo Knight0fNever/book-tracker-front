@@ -17,8 +17,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap-css-only": "^4.2.1",
-    "mdbvue": "./mdbvue-v5.1.1.tgz",
     "moment": "^2.24.0",
+    "mdbvue": "git+https://oauth2:C44qzmdwRZgzmTnQXHFc@git.mdbootstrap.com/mdb/vue/vu-pro.git",
     "vue": "^2.5.21",
     "vue-router": "^3.0.2",
     "vue2-touch-events": "^1.1.1"
