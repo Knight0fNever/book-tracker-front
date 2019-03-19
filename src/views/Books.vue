@@ -28,17 +28,18 @@ export default {
     }
   },
   methods: {
+    // Loads list of books from server
     loadBooks: function() {
       axios.get(`http://${process.env.VUE_APP_DB_HOST}:8080/books`).then((response) => {
           this.books = response.data
-          console.log(response.data);
+          // console.log(response.data);
         }, (error) => {
           console.log(error)
         });
     }
   },
   mounted: function() {
-    console.log(process.env);
+    // console.log(process.env);
     this.loadBooks();
   }
 }

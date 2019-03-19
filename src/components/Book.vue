@@ -32,7 +32,9 @@ export default {
   },
   data: function() {
     return {
+      // Format SQL date to readable
       datePublishedFormatted: moment(this.datePublished).format('MM-DD-YYYY'),
+      // Format string to float and then to currency string
       msrpFormatted: parseFloat(this.msrp).toLocaleString('en-US', { style: 'currency', currency: 'USD' })
     }
   },

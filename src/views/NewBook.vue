@@ -103,6 +103,7 @@ export default {
   },
   data() {
     return {
+      // Primes variables used for new book
       datePublished: "",
       title: "",
       author: "",
@@ -114,6 +115,7 @@ export default {
       startDate: {
         date: ""
       },
+      // Sets options for date picker
       option: {
         type: "day",
         week: ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
@@ -156,10 +158,12 @@ export default {
     };
   },
   methods: {
+    // Sets picker value to datePublished variable
     getPickerValue: function(value) {
       this.datePublished = value;
       // console.log(value);
     },
+    // Saves new book to server
     saveBook: function() {
       let self = this;
       let bookBody = {
@@ -178,7 +182,7 @@ export default {
       axios
         .post(`http://${process.env.VUE_APP_DB_HOST}:8080/book`, bookBody)
         .then(response => {
-          console.log(response);
+          // console.log(response);
         })
         .catch(e => {
           this.errors.push(e);

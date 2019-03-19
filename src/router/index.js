@@ -20,11 +20,6 @@ export default new Router({
       component: Books
     },
     {
-      path: '/authors',
-      name: 'Authors',
-      component: Authors
-    },
-    {
       path: '/new-book',
       name: 'NewBook',
       component: NewBook
